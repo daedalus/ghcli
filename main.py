@@ -10,10 +10,8 @@ import os
 
 def fetch_json(url):
 	response = urllib2.urlopen(url)
-	html = response.read()
-	if html:
-		jsondata = json.loads(html)
-		return jsondata
+	if html := response.read():
+		return json.loads(html)
 
 def main():
 	import argparse
